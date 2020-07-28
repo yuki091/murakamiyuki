@@ -19,8 +19,8 @@
   </div>
   <div class="card">
     <form action="{{ route('user.signin') }}" method="post">
-      <input type="text" id="email" name="email">
-      <input type="password" id="password" name="password">
+      <input placeholder="メールアドレス" type="text" id="email" name="email">
+      <input placeholder="パスワード" type="password" id="password" name="password">
       <button type="submit">ログイン</button>
       {{ csrf_field() }}
     </form>
