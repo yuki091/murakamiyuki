@@ -8,7 +8,7 @@
 <body>
     <div class="header flex">
         <div class="header-title">
-          <p>Mycloset</p>
+          <p>MyCloset</p>
         </div>
         <div class="header-right flex">
           <a href="/home">Home</a>

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mycloth</title>
+  <title>MyCloset</title>
 </head>
 <body>
   <div>
     <div class="header flex">
         <div class="header-title">
-          <p>Mycloset</p>
+          <p>MyCloset</p>
         </div>
         <div class="header-right flex">
           <a href="/home">Home</a>
