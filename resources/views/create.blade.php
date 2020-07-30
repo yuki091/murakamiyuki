@@ -24,7 +24,6 @@
       <input type="text" name="brand_name"><br>
       <label>メモ </label>
       <input type="text" name="memo"><br>
-      
       <button type="submit">登 録</button>
     </form>
   </div>
