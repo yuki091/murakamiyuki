@@ -23,13 +23,13 @@
         @foreach ($clothes as $cloth)
         <figure class="card__thumbnail">
           <!-- <img src="{{ asset('storage/'.$cloth->cloth_filename) }}" width="350px" height="350px"> -->
-          <img src="data:image/png;base64,<?= $image ?>" width="350px" height="350px">
+          <img src="data:image/png;base64,<?= $cloth->image ?>" width="350px" height="350px">
         </figure>
       </div>
       <div class="card__body">
         <p class="card__text">カテゴリー：{{ $cloth->category_name }}</p>
         <p class="card__text">ブランド  ：{{ $cloth->brand_name }}</p>
-        <p class="card__text">メモ      ：{{ $cloth->memo}}</p>
+        <p class="card__text">メモ      ：{{ $cloth->memo }}</p>
       </div>
       <div class="card__footer">
         <p class="card__text"><a href="/home/{{$cloth->id}}" class="button -compact">詳細</a></p>

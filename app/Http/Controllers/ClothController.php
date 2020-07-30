@@ -28,7 +28,7 @@ class ClothController extends Controller
     }
     public function store(Request $request)
     {
-        // $filename = $request->file('filename')->getClientOriginalName();;
+        //$image = $request->file('image')->getClientOriginalName();;
         // $request->file('filename')->storeAs('public', $filename);
         
         // Cloth::insert([
@@ -43,12 +43,12 @@ class ClothController extends Controller
         $clothes->category_name = $request->category_name;
         $clothes->brand_name = $request->brand_name;
         $clothes->memo = $request->memo;
-        $clothes->cloth_filename = $filename;
+        // $clothes->cloth_filename = $filename;
         $clothes->image = $image;
         $clothes->user_id = $request->user()->id;
         $clothes->save();
 
-         return redirect('/home');
+        return redirect('/home');
     }
     public function show($id)
     {

@@ -10,7 +10,7 @@ class Cloth extends Model
         'category_name',
         'brand_name',
         'memo',
-        'cloth_filename',
+        'image',
         'user_id'
     ];
     public function user() 
