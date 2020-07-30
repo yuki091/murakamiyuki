@@ -28,14 +28,16 @@ class ClothController extends Controller
     }
     public function store(Request $request)
     {
-        $filename = $request->file('filename')->getClientOriginalName();;
-        $request->file('filename')->storeAs('public', $filename);
-        
+        // $filename = $request->file('filename')->getClientOriginalName();;
+        // $request->file('filename')->storeAs('public', $filename);
+        $image = base64_encode(file_get_contents($request->image->getRealPath()));
+        $request->file('image')->storeAs('public', $image);
         $clothes = new Cloth;
         $clothes->category_name = $request->category_name;
         $clothes->brand_name = $request->brand_name;
         $clothes->memo = $request->memo;
-        $clothes->cloth_filename = $filename;
+        // $clothes->cloth_filename = $filename;
+        $clothes->image = $image;
         $clothes->user_id = $request->user()->id;
         $clothes->save();
 
