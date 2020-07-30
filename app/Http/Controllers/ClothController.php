@@ -54,7 +54,8 @@ class ClothController extends Controller
     public function update(Request $request, $id)
     {
         $cloth = Cloth::find($id);
-        $filename = $request->file('filename')->getClientOriginalName();;
+        // $filename = $request->file('filename')->getClientOriginalName();;
+        $filename = base64_encode(file_get_contents($request->filename->getRealPath()));
         $request->file('filename')->storeAs('public', $filename);
         $cloth->category_name = $request->category_name;
         $cloth->brand_name = $request->brand_name;
