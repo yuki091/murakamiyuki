@@ -17,7 +17,7 @@
     </div>
     <form method="post" action="/home" enctype="multipart/form-data">
       {{ csrf_field() }}
-      <input type="file" name="filename" /><br>
+      <input type="file" name="image" /><br>
       <label>カテゴリー</label>
       <input type="text" name="category_name"/><br>
       <label>ブランド </label>

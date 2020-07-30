@@ -55,12 +55,12 @@ class ClothController extends Controller
     {
         $cloth = Cloth::find($id);
         // $filename = $request->file('filename')->getClientOriginalName();;
-        $filename = base64_encode(file_get_contents($request->filename->getRealPath()));
-        $request->file('filename')->storeAs('public', $filename);
+        $image = base64_encode(file_get_contents($request->image->getRealPath()));
+        $request->file('image')->storeAs('public', $image);
         $cloth->category_name = $request->category_name;
         $cloth->brand_name = $request->brand_name;
         $cloth->memo = $request->memo;
-        $cloth->cloth_filename = $filename;
+        $cloth->image = $image;
         $cloth->save();
 
         return redirect("home");
