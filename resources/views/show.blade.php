@@ -6,28 +6,28 @@
     <title>MyCloset</title>
 </head>
 <body>
-    <div class="header flex">
-      <div class="header-title">
-        <p>MyCloset</p>
-      </div>
-      <div class="header-right flex">
-        <a href="/home">Home</a>
-      </div>
+  <div class="header flex">
+    <div class="header-title">
+      <p>MyCloset</p>
     </div>
-    <div class="l-wrapper">
-        <article class="card">  
-            <figure class="card__thumbnail">
-              <img src="{{ asset('storage/'.$cloth->cloth_filename) }}" width="350px" height="350px">
-            </figure>
-            <div class="card__body">
-                <p class="card__text">カテゴリー：{{ $cloth->category_name }}</p>
-                <p class="card__text">ブランド  ：{{ $cloth->brand_name }}</p>
-                <p class="card__text">メモ      ：{{ $cloth->memo}}</p>
-                <p class="card__text">作成日    ：{{ $cloth->created_at }}</p>
-                <p class="card__text"><a href="/home/{{$cloth->id}}/edit" class="button -compact">編集</a></p>
-            </div>
-        </article>
+    <div class="header-right flex">
+      <a href="/home">Home</a>
     </div>
+  </div>
+  <div class="l-wrapper">
+    <article class="card">  
+      <figure class="card__thumbnail">
+        <img src="{{ asset('storage/'.$cloth->cloth_filename) }}" width="350px" height="350px">
+      </figure>
+      <div class="card__body">
+        <p class="card__text">カテゴリー：{{ $cloth->category_name }}</p>
+        <p class="card__text">ブランド  ：{{ $cloth->brand_name }}</p>
+        <p class="card__text">メモ      ：{{ $cloth->memo}}</p>
+        <p class="card__text">作成日    ：{{ $cloth->created_at }}</p>
+        <p class="card__text"><a href="/home/{{$cloth->id}}/edit" class="button -compact">編集</a></p>
+      </div>
+    </article>
+  </div>
 </body>
 </html>
 <style>

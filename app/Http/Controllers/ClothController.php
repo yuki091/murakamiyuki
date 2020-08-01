@@ -38,7 +38,7 @@ class ClothController extends Controller
         $clothes->category_name = $request->category_name;
         $clothes->brand_name = $request->brand_name;
         $clothes->memo = $request->memo;
-        $clothes->image = $image;
+        // $clothes->image = $image;
         $clothes->user_id = $request->user()->id;
         $clothes->save();
 
