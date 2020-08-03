@@ -21,8 +21,8 @@
       <div class="card__header">
         @foreach ($clothes as $cloth)
         <figure class="card__thumbnail">
-          <!-- <img src="{{ asset('storage/'.$cloth->cloth_filename) }}" width="350px" height="350px"> -->
-          <img src="data:image/png;base64,{{ $cloth->image }}" width="350px" height="350px">
+          <img src="{{ asset('storage/'.$cloth->image) }}" width="350px" height="350px">
+          <!-- <img src="data:image/png;base64,{{ $cloth->image }}" width="350px" height="350px"> -->
         </figure>
       </div>
       <div class="card__body">
