@@ -16,14 +16,14 @@
       </div>
     </div>
   </div>
+  @foreach ($clothes as $cloth)
   <div class="l-wrapper">
-    <article class="card">
+    <div class="card">
       <div class="card__header">
-        @foreach ($clothes as $cloth)
-        <figure class="card__thumbnail">
+        <div class="card__image">
           <img src="{{ asset('storage/'.$cloth->image) }}" width="350px" height="350px">
           <!-- <img src="data:image/png;base64,{{ $cloth->image }}" width="350px" height="350px"> -->
-        </figure>
+        </div>
       </div>
       <div class="card__body">
         <p class="card__text">カテゴリー：{{ $cloth->category_name }}</p>
@@ -31,18 +31,18 @@
         <p class="card__text">メモ      ：{{ $cloth->memo }}</p>
       </div>
       <div class="card__footer">
-        <p class="card__text"><a href="/home/{{$cloth->id}}" class="button -compact">詳細</a></p>
-        <p class="card__text"><a href="/home/{{$cloth->id}}/edit" class="button -compact">編集</a></p>
+        <p class="card__button"><a href="/home/{{$cloth->id}}" class="button -compact">詳細</a></p>
+        <p class="card__button"><a href="/home/{{$cloth->id}}/edit" class="button -compact">編集</a></p>
         <form action="/home/{{$cloth->id}}" method="post">
           {{ csrf_field() }}
           @method('DELETE')
-          <!-- <input type="submit" class="button -compact" value="削除"> -->
-          <p class="card__text"><a href="#" class="button -compact">削除</a></p>
+          <input type="submit" class="button -compact" value="削除">
+          <!-- <p class="card__text"><a href="#" class="button -compact">削除</a></p> -->
         </form>
-        @endforeach
       </div>
-    </article>
+    </div>
   </div>
+  @endforeach
 </body>
 </html>
 <style>
@@ -77,7 +77,7 @@ margin-left: 30px;
 .l-wrapper {
   margin: 3rem;
   width: 350px;
-  /* float: left; */
+  float: left;
 }
 
 .card {
@@ -90,12 +90,9 @@ margin-left: 30px;
   display: flex;
   flex-wrap: wrap;
 }
-.card__thumbnail {
+.card__image {
   margin: 0;
   order: 0;
-}
-.card__image {
-  width: 100%;
 }
 .card__body {
   padding: 1rem;
