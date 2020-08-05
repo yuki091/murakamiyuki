@@ -57,8 +57,8 @@ class ClothController extends Controller
     public function update(Request $request, $id)
     {
         $cloth = Cloth::find($id);
-        // $filename = $request->file('filename')->getClientOriginalName();;
-        $image = base64_encode(file_get_contents($request->image->getRealPath()));
+        $filename = $request->file('image')->getClientOriginalName();
+        // $image = base64_encode(file_get_contents($request->image->getRealPath()));
         $request->file('image')->storeAs('public', $image);
         $cloth->category_name = $request->category_name;
         $cloth->brand_name = $request->brand_name;
@@ -76,4 +76,3 @@ class ClothController extends Controller
         return redirect('home');
     }
 }
-   
