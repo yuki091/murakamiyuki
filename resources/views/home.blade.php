@@ -17,7 +17,7 @@
     </div>
   </div>
   @foreach ($clothes as $cloth)
-  <div class="l-wrapper">
+  <div class="l-wrapper flex">
     <div class="card">
       <div class="card__header">
         <div class="card__image">
@@ -36,8 +36,10 @@
         <form action="/home/{{$cloth->id}}" method="post">
           {{ csrf_field() }}
           @method('DELETE')
-          <input type="submit" class="button -compact" value="削除">
-          <!-- <p class="card__text"><a href="#" class="button -compact">削除</a></p> -->
+          <p class="card__button">
+            <!-- <input type="submit" class="button -compact" value="削除"> -->
+            <a type="submit" class="button -compact">削除</a>
+          </p>
         </form>
       </div>
     </div>
@@ -75,11 +77,12 @@ margin-left: 30px;
   color: white;
 }
 .l-wrapper {
-  margin: 3rem;
+  margin: 54px;
   width: 350px;
   float: left;
+  display:flex;
+  flex-wrap: wrap;
 }
-
 .card {
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, .16);
@@ -99,21 +102,20 @@ margin-left: 30px;
 }
 .card__text {
   font-size: 1rem;
-  /* margin-top: .5rem; */
+  margin-top: .5rem;
 }
 
 .card__footer {
-  /* padding: 1rem; */
-  border-top: 1px solid #ddd;
-  clear: both;
   display: inline-flex;
+  margin-bottom: 10px;
 }
 .button {
   display: inline-block;
   text-decoration: none;
-  transition: background-color .3s ease-in-out;
+  /* transition: background-color .3s ease-in-out; */
   cursor: pointer;
-  margin-left: 20px;
+  margin-left: 38px;
+  
 }
 .button.-compact {
   padding: .5rem 1rem;
@@ -138,7 +140,21 @@ margin-left: 30px;
   transition: background-color .3s ease-in-out;
   cursor: pointer;
 } */
-
+@media screen and (max-width:480px)
+{
+.l-wrapper {
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+}
+.card {
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .16);
+  color: #212121;
+  text-decoration: none;
+  text-align: center;
+}
+}
 </style>
 
 

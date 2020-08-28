@@ -17,7 +17,7 @@
   <div class="l-wrapper">
     <article class="card">  
       <figure class="card__thumbnail">
-        <img src="{{ asset('storage/'.$cloth->cloth_filename) }}" width="350px" height="350px">
+        <img src="{{ asset('storage/'.$cloth->image) }}" width="350px" height="350px">
       </figure>
       <div class="card__body">
         <p class="card__text">カテゴリー：{{ $cloth->category_name }}</p>
@@ -60,7 +60,6 @@ font-size: 18px;
 color: white;
 }
 .l-wrapper {
-
   width: 350px;
   text-align: center;
   margin: 0 auto;
